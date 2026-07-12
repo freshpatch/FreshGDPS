@@ -44,7 +44,7 @@ export default {
                         </td>
                         <td class="level" :class="{ 'active': selected == i, 'error': !level }">
                             <button @click="selected = i">
-                                <span class="type-label-lg">{{ level?.name || \`Error (\${err}.json)\` }}</span>
+                                <span class="type-label-lg">{{ level?.name || `Error (${err}.json)` }}</span>
                             </button>
                         </td>
                     </tr>
@@ -90,7 +90,7 @@ export default {
                                 <a :href="record.link" target="_blank" class="type-label-lg">{{ record.user }}</a>
                             </td>
                             <td class="mobile">
-                                <img v-if="record.mobile" :src="\`/assets/phone-landscape\${store.dark ? '-dark' : ''}.svg\`" alt="Mobile">
+                                <img v-if="record.mobile" :src="`/assets/phone-landscape${store.dark ? '-dark' : ''}.svg`" alt="Mobile">
                             </td>
                             <td class="hz">
                                 <p>{{ record.hz }}Hz</p>
@@ -187,7 +187,7 @@ export default {
             if (!this.level) return '';
             const url = this.level.showcase || this.level.verification;
             const videoId = url.match(/\/video\/(\d+)/)?.[1];
-            return videoId ? \`https://www.tiktok.com/embed/v2/\${videoId}\` : '';
+            return videoId ? `https://www.tiktok.com/embed/v2/${videoId}` : '';
         }
     },
     async mounted() {
