@@ -32,10 +32,12 @@
         />
         <script src="https://unpkg.com/vue@3.2.31/dist/vue.global.js"></script>
         <script src="https://unpkg.com/vue-router@4.0.14/dist/vue-router.global.prod.js"></script>
+        <script async src="https://www.instagram.com/embed.js"></script>
+        <script async src="https://platform.twitter.com/widgets.js"></script>
         <script type="module" src="js/main.js"></script>
     </head>
     <body id="app">
-        <header :class="{ dark: store.dark }">
+        <header :class="{ dark: store.dark, 'challenge-theme': store.category === 'challenge' }">
             <div class="logo">
                 <h2>RVGDPS Demonlist</h2>
                 <p>v1.0.0</p>
@@ -74,6 +76,6 @@
                 </div>
             </nav>
         </header>
-        <router-view :class="{ dark: store.dark }"></router-view>
+        <router-view :class="{ dark: store.dark, 'challenge-theme': store.category === 'challenge' }"></router-view>
     </body>
 </html>
